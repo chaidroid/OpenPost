@@ -15,6 +15,9 @@ app.use(cors());
 
 app.use('/posts', postRoutes);
 app.use("/user", userRouter);
+app.get('/',(re,res)=>{
+  res.send("APP WORKING");
+})
 
 const CONNECTION_URL = 'mongodb+srv://chaitanya:simplechai@cluster0.jnoribr.mongodb.net/?retryWrites=true&w=majority';
 const PORT = process.env.PORT|| 5000;
