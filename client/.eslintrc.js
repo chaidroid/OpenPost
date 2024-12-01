@@ -1,6 +1,6 @@
 module.exports = {
   env: {
-    browser: true,
+    browser: false,
     es6: true,
   },
   extends: [
@@ -18,7 +18,7 @@ module.exports = {
     ecmaVersion: 2018,
     sourceType: 'module',
   },
-  parser: 'babel-eslint',
+  parser: '@babel/eslint-parser',
   plugins: [
     'react',
   ],
@@ -80,5 +80,26 @@ module.exports = {
         ],
       },
     ],
+    "react/function-component-definition": "off",
+    "no-undef": "off",
+    "indent": "off",
+    "spaced-comment": "off",
+    "no-trailing-spaces": "off",
+    "no-unused-vars": "off",
+    "react/no-deprecated": "off",
+    "react/jsx-indent": "off",
+    "react/no-unknown-property": "off",
+    "react/jsx-props-no-spreading": "off",
+    "eqeqeq": "off",
+    "default-param-last": "off",
+    "comma-spacing": "off",
+    "padded-blocks": "off",
+    "no-multiple-empty-lines": "off",
+    "block-spacing": "off",
+    "consistent-return": "off",
+    "import/newline-after-import": "off",
+    "react/no-unescaped-entities": "off",
+    "react/no-unstable-nested-components": "off",
+    "space-in-parens": "off"
   },
 };

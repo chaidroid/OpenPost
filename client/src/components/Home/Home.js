@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Container, Grow, Grid, AppBar, TextField, Button, Paper } from '@material-ui/core';
 import { useDispatch } from 'react-redux';
-import { useHistory, useLocation } from 'react-router-dom';
+import { useNavigate, useLocation } from 'react-router-dom';
 import ChipInput from 'material-ui-chip-input';
 //chip input for tags
 import { getPostsBySearch } from '../../actions/posts';
@@ -25,7 +25,7 @@ const Home = () => {
 
   const [search, setSearch] = useState('');
   const [tags, setTags] = useState([]);
-  const history = useHistory();
+  const history = useNavigate();
 
   const searchPost = () => {
     //trim means remove empty spaces

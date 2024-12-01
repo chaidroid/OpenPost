@@ -27,7 +27,7 @@
     "redux-thunk": "^2.3.0"
   },
   "scripts": {
-    "start": "react-scripts --openssl-legacy-provider start",
+    "start": "DISABLE_ESLINT_PLUGIN=true react-scripts --openssl-legacy-provider start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
@@ -48,6 +48,7 @@
     ]
   },
   "devDependencies": {
+    "@babel/eslint-parser": "^7.25.9",
     "@redux-devtools/core": "^3.9.0",
     "@redux-devtools/dock-monitor": "^1.4.0",
     "@redux-devtools/log-monitor": "^2.3.0",

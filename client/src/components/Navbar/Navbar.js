@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { AppBar, Typography, Toolbar, Avatar, Button } from '@material-ui/core';
-import { Link, useHistory, useLocation } from 'react-router-dom';
+import { Link, useNavigate, useLocation } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
-import decode from 'jwt-decode';
+import { jwtDecode } from 'jwt-decode';
 
 import memoriesLogo from '../../images/memoriesLogo.png';
 import memoriesText from '../../images/memoriesText.png';
@@ -13,7 +13,7 @@ const Navbar = () => {
   const [user, setUser] = useState(JSON.parse(localStorage.getItem('profile')));
   const dispatch = useDispatch();
   const location = useLocation();
-  const history = useHistory();
+  const history = useNavigate();
   const classes = useStyles();
 
   const logout = () => {
@@ -28,7 +28,7 @@ const Navbar = () => {
     const token = user?.token;
 
     if (token) {
-      const decodedToken = decode(token);
+      const decodedToken = jwtDecode(token);
       //if current time is greater then token expiry time logout get time is in milliseconds token time is in microseconds
       if (decodedToken.exp * 1000 < new Date().getTime()) logout();
     }

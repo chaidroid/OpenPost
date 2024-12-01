@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { Avatar, Button, Paper, Grid, Typography, Container } from '@material-ui/core';
-import { useHistory } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
 
@@ -16,7 +16,7 @@ const SignUp = () => {
   const [form, setForm] = useState(initialState);
   const [isSignup, setIsSignup] = useState(false);
   const dispatch = useDispatch();
-  const history = useHistory();
+  const history = useNavigate();
   const classes = useStyles();
 
   const [showPassword, setShowPassword] = useState(false);
